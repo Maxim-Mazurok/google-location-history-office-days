@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "latitudeE7": { "type": "integer" },
+          "longitudeE7": { "type": "integer" },
+          "accuracy": { "type": "integer" },
+          "source": { "type": "string" },
+          "deviceTag": { "type": "integer" },
+          "timestamp": { "type": "string" },
+          "activity": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activity": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": { "type": "string" },
+                      "confidence": { "type": "integer" },
+                      "extra": {
+                        "type": "object",
+                        "properties": {
+                          "type": { "type": "string" },
+                          "name": { "type": "string" },
+                          "intVal": { "type": "integer" }
+                        },
+                        "required": ["intVal", "name", "type"]
+                      }
+                    },
+                    "required": ["confidence", "type"]
+                  }
+                },
+                "timestamp": { "type": "string" }
+              },
+              "required": ["activity", "timestamp"]
+            }
+          },
+          "deviceDesignation": { "type": "string" },
+          "activeWifiScan": {
+            "type": "object",
+            "properties": {
+              "accessPoints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "mac": { "type": "string" },
+                    "strength": { "type": "integer" },
+                    "isConnected": { "type": "boolean" },
+                    "frequencyMhz": { "type": "integer" },
+                    "rttMeasurementAttempts": { "type": "integer" },
+                    "successfulRttMeasurements": { "type": "integer" },
+                    "rttEstimatedDistanceMm": { "type": "integer" },
+                    "rttDistanceStdDevMm": { "type": "integer" },
+                    "rttChannelBandwidth": { "type": "integer" }
+                  },
+                  "required": ["frequencyMhz", "mac", "strength"]
+                }
+              }
+            },
+            "required": ["accessPoints"]
+          },
+          "altitude": { "type": "integer" },
+          "verticalAccuracy": { "type": "integer" },
+          "platformType": { "type": "string" },
+          "locationMetadata": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "wifiScan": {
+                  "type": "object",
+                  "properties": {
+                    "accessPoints": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "mac": { "type": "string" },
+                          "strength": { "type": "integer" },
+                          "frequencyMhz": { "type": "integer" },
+                          "rttMeasurementAttempts": { "type": "integer" },
+                          "successfulRttMeasurements": { "type": "integer" },
+                          "rttEstimatedDistanceMm": { "type": "integer" },
+                          "rttDistanceStdDevMm": { "type": "integer" },
+                          "rttChannelBandwidth": { "type": "integer" }
+                        },
+                        "required": ["frequencyMhz", "mac", "strength"]
+                      }
+                    }
+                  },
+                  "required": ["accessPoints"]
+                },
+                "timestamp": { "type": "string" }
+              },
+              "required": ["timestamp", "wifiScan"]
+            }
+          },
+          "osLevel": { "type": "integer" },
+          "serverTimestamp": { "type": "string" },
+          "deviceTimestamp": { "type": "string" },
+          "batteryCharging": { "type": "boolean" },
+          "formFactor": { "type": "string" },
+          "inferredLocation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": { "type": "string" },
+                "latitudeE7": { "type": "integer" },
+                "longitudeE7": { "type": "integer" },
+                "accuracy": { "type": "integer" }
+              },
+              "required": ["accuracy", "latitudeE7", "longitudeE7", "timestamp"]
+            }
+          },
+          "velocity": { "type": "integer" },
+          "heading": { "type": "integer" },
+          "placeId": { "type": "string" }
+        },
+        "required": ["deviceTag", "timestamp"]
+      }
+    }
+  },
+  "required": ["locations"]
+}

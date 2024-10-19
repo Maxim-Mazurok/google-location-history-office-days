@@ -1,0 +1,33 @@
+{
+  "locations": [
+    {
+      "latitudeE7": 460000000,
+      "longitudeE7": 300000000,
+      "timestamp": "2020-01-01T10:01:10.100Z"
+    },
+    {
+      "latitudeE7": 460000000,
+      "longitudeE7": 300000000,
+      "timestamp": "2020-01-02T10:01:10.100Z"
+    },
+    {
+      "latitudeE7": 460000000,
+      "longitudeE7": 300000000,
+      "timestamp": "2020-01-03T10:01:10.100Z"
+    },
+    {
+      "latitudeE7": 460000000,
+      "longitudeE7": 300000000,
+      "timestamp": "2020-01-04T10:01:10.100Z"
+    },
+    {
+      "latitudeE7": -330000000,
+      "longitudeE7": 1510000000,
+      "activity": [
+        {
+          "timestamp": "2020-01-05T10:01:10.100Z"
+        }
+      ]
+    }
+  ]
+}
